@@ -248,6 +248,8 @@ def select_audiocodec(isQuery, inFile, tsn='', mime=''):
     if ((codec == 'copy' and codectype == 'mpeg2video' and not copy_flag) or
         (copy_flag and copy_flag.lower() == 'false')):
         copyts = ''
+    if codec == 'ac3':
+        codec = 'ac3_fixed'
     return '-acodec ' + codec + copyts
 
 def select_audiofr(inFile, tsn):
